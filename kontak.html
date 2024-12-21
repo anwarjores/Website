@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desain Web dengan Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tambahkan CSS lightGallery -->
+    <link href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.7.0/dist/css/lightgallery-bundle.min.css" rel="stylesheet">
+    <!-- Tambahkan JS lightGallery -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.7.0/dist/js/lightgallery.min.js"></script>
+    <style>
+        
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #0896e7;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header .description {
+            font-size: 14px;
+        }
+        .header-right {
+            margin-left: 20px;
+        }
+
+
+        /* Styling untuk button di dalam card */
+        .card .btn {
+            margin-top: 15px;
+            background-color: #e3db05;
+            color: #6610f2;
+            border-radius: 5px;
+        }
+
+        .card .btn:hover {
+            background-color: #6610f2;
+            color: white;
+        }
+
+
+        /* Menambahkan sticky pada navbar */
+        .navbar {
+            background-color: #056298;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: white;
+        }
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #045085;
+        }
+        .navbar-nav .nav-item .nav-link {
+            padding: 10px;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 20px;
+        }
+        .content {
+            flex: 3;
+            background-color: white;
+            padding: 20px;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .sidebar {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hover-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .hover-link:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+
+        .social-icon:hover {
+            color: yellow;
+            transition: color 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            footer .row {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer .col-md-6 {
+                margin-bottom: 10px;
+            }
+        }
+
+        footer {
+            background-color: #056298;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Menampilkan jam di sidebar */
+        .digital-clock {
+            background-color: #056298;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* Berita dan Layout */
+        .news-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .news-title hr {
+            width: 50%;
+            height: 4px; /* Mengatur tinggi garis */
+            background: linear-gradient(to right, #e3db05, #056298); /* Garis dengan dua warna */
+            border: none; /* Menghilangkan border default */
+            margin: 0 auto;
+        }
+
+        /* Initial state for news card - invisible */
+        .news-card {
+            opacity: 0;
+            transform: translateY(20px); /* Make the card start slightly lower */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effect */
+        }
+
+        /* Keyframes for the fade-in effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px); /* Start from below */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* End at normal position */
+            }
+        }
+
+        /* Apply animation to news cards */
+        .news-card.show {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+
+        .news-card {
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #056298;  /* Border tipis dengan warna #056298 */
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .news-card img {
+            width: 300px;
+            height: 200px;
+            margin-right: 20px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .news-content {
+            flex: 1;
+        }
+
+        .news-content h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .news-content .icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .news-content .icons i {
+            font-size: 18px;
+            color: #056298;
+        }
+
+        .news-content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            text-align: justify; /* Menambahkan perataan justify */
+        }
+
+        .news-content .read-more {
+            display: inline-block;
+            font-weight: bold;
+            color: #056298;
+            text-decoration: none;
+        }
+
+        .news-content .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling untuk gambar yang memenuhi lebar penuh artikel */
+        .full-width-img {
+            width: 100%;       /* Memastikan gambar memenuhi lebar penuh */
+            height: auto;      /* Mempertahankan rasio aspek */
+            max-height: 400px; /* Membatasi tinggi gambar agar tidak terlalu besar */
+            margin: 20px 0;
+        }
+
+        /* Styling for titles centered like 'Berita Terbaru' and 'Artikel Terkini' */
+        .news-title {
+            text-align: center; /* Keep text centered */
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .news-title hr {
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(to right, #e3db05, #056298);
+            border: none;
+            margin: 0 auto;
+        }
+
+        /* Title for the article aligned to the left */
+        .news-title-left {
+            text-align: left; /* Align the title to the left */
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Styling untuk pagination */
+        .pagination {
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination .page-item {
+            font-weight: bold;
+        }
+        .pagination .page-item .page-link {
+            color: #056298;
+            background-color: white;
+            border-color: #056298;
+        }
+        .pagination .page-item.active .page-link {
+            color: white;
+            background-color: #056298;
+            border-color: #056298;
+        }
+        .pagination .page-link:hover {
+            background-color: #056298;
+            color: white;
+        }
+
+        /* Admin Section - Sidebar */
+        .admin-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .admin-icon {
+            margin-right: 10px;
+        }
+
+        .admin-title h3 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .bold-line {
+            border: 2px solid #000; /* Garis bold hitam */
+            margin: 10px 0;
+        }
+
+        .thin-line {
+            border: 1px solid #056298; /* Garis tipis dengan warna #056298 */
+            margin-bottom: 20px;
+        }
+
+        /* Slider Gambar */
+        .image-slider .carousel-inner img {
+            max-height: 400px;
+            object-fit: cover;
+            border: 5px solid #056298; /* Border sekitar gambar */
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5); /* Background hitam transparan */
+            color: white;
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        /* Statistik */
+        .statistic-item a {
+            text-decoration: none;
+            color: #056298;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .statistic-item a:hover {
+            color: #e3db05;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .statistic-item img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .statistic-item a {
+                font-size: 14px;
+            }
+        }
+
+        /* Responsif */
+        @media (max-width: 767px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .news-card {
+                flex-direction: column; /* Mengubah layout menjadi vertikal */
+                text-align: center;
+            }
+
+            .news-card img {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 100%;
+                height: auto;
+            }
+
+            .news-content {
+                text-align: left;
+            }
+
+            .navbar-collapse {
+                background-color: #056298;
+            }
+
+            .header .header-left img {
+                display: none;
+            }
+
+            .navbar-toggler {
+                border: none;
+                background-color: transparent;
+            }
+
+            .navbar-toggler-icon {
+                background-image: url('logo.png');
+                background-size: contain;
+                height: 50px;
+                width: 50px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .header .title {
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+
+            .header .description {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left d-flex align-items-center">
+            <img src="logo.png" alt="Logo">
+            <div>
+                <div class="title">WEBSITE RESMI DESA TELUK MAJELIS</div>
+                <div class="description">KEC. KUALA JAMBI, KAB. TANJAB TIMUR, PROV JAMBI</div>
+            </div>
+        </div>
+        <div class="header-right">
+            <input type="text" class="form-control" placeholder="Cari...">
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil Desa</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profil Wilayah Desa</a></li>
+                            <li><a class="dropdown-item" href="#">Sejarah</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container-fluid">
+        <div class="content">
+            <marquee style="font-weight: bold;">Selamat Datang di Website Desa Teluk Majelis</marquee>
+            <div class="news-title">
+                My Kontak
+                <hr>
+            </div>
+            <form action="#" method="post" class="p-3">
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Masukkan email Anda" required>
+                </div>
+                <div class="mb-3">
+                    <label for="no_hp" class="form-label">No HP</label>
+                    <input type="tel" id="no_hp" name="no_hp" class="form-control" placeholder="Masukkan nomor HP Anda" required>
+                </div>
+                <div class="mb-3">
+                    <label for="pesan" class="form-label">Pesan</label>
+                    <textarea id="pesan" name="pesan" class="form-control" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim</button>
+            </form>
+        </div>
+
+        <div class="sidebar">
+            <!-- Digital Clock -->
+            <div id="clock" class="digital-clock"></div>
+            <div class="admin-section">
+                <i class="bi bi-map admin-icon" style="font-size: 24px;"></i>
+                <div class="admin-title">
+                    <h3>Peta Lokasi</h3>
+                </div>
+            </div>
+            
+            <!-- Garis Bold Kanan dan Kiri -->
+            <div class="bold-line"></div>
+            <div class="thin-line"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37951.005624987185!2d103.79554960627704!3d-1.0811159413692168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e260f8c00a79e07%3A0x475e0c5315bf2702!2sKantor%20Desa%20Teluk%20Majelis!5e0!3m2!1sid!2sid!4v1734755633232!5m2!1sid!2sid" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    
+    <footer style="background-color: #045085; color: white; padding: 20px;">
+        <div class="container">
+            <div class="row text-center text-md-start align-items-center">
+                <!-- Tulisan Footer -->
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p>&copy; 2024 Desa Teluk Majelis. All rights reserved.</p>
+                </div>
+                <!-- Ikon Media Sosial -->
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="social-icon"><i class="bi bi-facebook" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-twitter" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-linkedin" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        //efek muncul
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsCards = document.querySelectorAll('.news-card');
+            newsCards.forEach(card => {
+                card.classList.add('show');  // Add the 'show' class to trigger the animation
+            });
+        });
+    </script>
+    
+</body>
+</html>

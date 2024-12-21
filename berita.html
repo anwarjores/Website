@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desain Web dengan Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tambahkan CSS lightGallery -->
+    <link href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.7.0/dist/css/lightgallery-bundle.min.css" rel="stylesheet">
+    <!-- Tambahkan JS lightGallery -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.7.0/dist/js/lightgallery.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left d-flex align-items-center">
+            <img src="logo.png" alt="Logo">
+            <div>
+                <div class="title">WEBSITE RESMI DESA TELUK MAJELIS</div>
+                <div class="description">KEC. KUALA JAMBI, KAB. TANJAB TIMUR, PROV JAMBI</div>
+            </div>
+        </div>
+        <div class="header-right">
+            <input type="text" class="form-control" placeholder="Cari...">
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil Desa</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profil Wilayah Desa</a></li>
+                            <li><a class="dropdown-item" href="#">Sejarah</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pemerintah Desa</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
+                            <li><a class="dropdown-item" href="#">Pemerintah Desa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Lembaga Masyarakat</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data Desa</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Data Wilayah Administratif</a></li>
+                            <li><a class="dropdown-item" href="#">Data Pendidikan Dalam KK</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">BumDesa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Laporan Online Produk Desa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Status SDGS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pengaduan Desa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Status IDM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="berita.html">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <marquee style="font-weight: bold;">Selamat Datang di Website Desa Teluk Majelis</marquee>
+    <!-- Card Baru -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Card Kiri -->
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="foto.jpg" alt="Foto" class="card-img-left" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+                <!-- Card Kanan dengan Background #6610f2 -->
+            <div class="col-md-6">
+                <div class="card bg-purple" style="background-color: #6610f2; color: white; padding: 20px; border-radius: 10px;">
+                    <h3 class="card-title">Selamat Datang</h3>
+                    <p class="card-text">Desa Teluk Majelis adalah nama yang diambil dari nama seorang tokoh masyarakat yang dahulunya sejak tahun 1978 sampai tahun 1999 desa ini adalah bagian dari Desa Mendahara Ulu Kecamatan Mendahara yang dipimpin oleh seorang ketua RT yang bernama Rohim. Dengan berjalannya waktu dan perkembangan jaman, pada tahun 2004 Desa dalam wilayah Kabupaten Tanjung Jabung Timur dimekarkan dari 63 menjadi 93 Desa/Kelurahan dan Kecamatan yang dahulunya 6 menjadi 11 kecamatan. Berdasarkan Peraturan Pemerintah Kabupaten Tanjung Jabung Timur Nomor 12 tahun 2004 tentang Penataan Kecamatan dan Desa/Kelurahan dalam Kabupaten Tanjung Jabung Timur.Desa Teluk Majelis adalah bagian dari Dusun Simpang Kiri yang dahulunya adalah salah satu dusun dari 11 dusun dalam wilayah Desa Mendahara Ulu yang hanya meliputi wilayah Dusun Simpang Kiri.</p>
+                    <a href="#" class="btn btn-light">Pemerintah Desa Teluk Majelis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content container-fluid">
+        <div class="content">
+            
+            <div class="news-title">
+                Berita Terbaru
+                <hr>
+            </div>
+            
+            <!-- Card Berita -->
+            <div class="news-card">
+                <img src="1.png" alt="Gambar Berita">
+                <div class="news-content">
+                    <h3 class="news-title-left">RKDD Pematang Rahim Gelar Kegiatan Orientasi dan Rembuk Program Desa Cerdas</h3>
+                    <!-- Ikon Admin dan Kalender di bawah judul berita -->
+                    <div class="icons">
+                        <i class="bi bi-person-fill"> Admin</i>
+                        <i class="bi bi-calendar"> 20 Desember 2024</i>
+                    </div>
+                    <p>
+                        Pematang Rahim, pematangrahim.desa.id - Ruang Komunitas Digital Desa (RKDD) Pematang Rahim menggelar launching program Desa Cerdas 
+                    </p>
+                    <a href="artikel.html" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <div class="news-title">
+                Artikel Terkini
+                <hr>
+            </div>
+            <div class="news-card">
+                <img src="1.png" alt="Gambar Berita">
+                <div class="news-content">
+                    <h3 class="news-title-left">RKDD Pematang Rahim Gelar Kegiatan Orientasi dan Rembuk Program Desa Cerdas</h3>
+                    <!-- Ikon Admin dan Kalender di bawah judul berita -->
+                    <div class="icons">
+                        <i class="bi bi-person-fill"> Admin</i>
+                        <i class="bi bi-calendar"> 20 Desember 2024</i>
+                    </div>
+                    <p>
+                        Pematang Rahim, pematangrahim.desa.id - Ruang Komunitas Digital Desa (RKDD) Pematang Rahim menggelar launching program Desa Cerdas 
+                    </p>
+                    <a href="artikel.html" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="1.png" alt="Gambar Berita">
+                <div class="news-content">
+                    <h3 class="news-title-left">RKDD Pematang Rahim Gelar Kegiatan Orientasi dan Rembuk Program Desa Cerdas</h3>
+                    <!-- Ikon Admin dan Kalender di bawah judul berita -->
+                    <div class="icons">
+                        <i class="bi bi-person-fill"> Admin</i>
+                        <i class="bi bi-calendar"> 20 Desember 2024</i>
+                    </div>
+                    <p>
+                        Pematang Rahim, pematangrahim.desa.id - Ruang Komunitas Digital Desa (RKDD) Pematang Rahim menggelar launching program Desa Cerdas 
+                    </p>
+                    <a href="artikel.html" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <!-- Paging -->
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo; Prev</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">Next &raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="sidebar">
+            <!-- Digital Clock -->
+            <div id="clock" class="digital-clock"></div>
+            
+            <!-- Admin Section with Slider -->
+            <div class="admin-section">
+                <i class="bi bi-person-fill admin-icon" style="font-size: 24px;"></i>
+                <div class="admin-title">
+                    <h3>Pemerintah Desa</h3>
+                </div>
+            </div>
+            
+            <!-- Garis Bold Kanan dan Kiri -->
+            <div class="bold-line"></div>
+            <div class="thin-line"></div>
+            
+            <!-- Image Slider -->
+            <div class="image-slider">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="image1.jpg" class="d-block w-100" alt="Slide 1">
+                            <div class="carousel-caption">
+                                <p>Nama Foto 1</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image2.jpg" class="d-block w-100" alt="Slide 2">
+                            <div class="carousel-caption">
+                                <p>Nama Foto 2</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image3.jpg" class="d-block w-100" alt="Slide 3">
+                            <div class="carousel-caption">
+                                <p>Nama Foto 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-section">
+                <i class="bi bi-map admin-icon" style="font-size: 24px;"></i>
+                <div class="admin-title">
+                    <h3>Peta Lokasi</h3>
+                </div>
+            </div>
+            
+            <!-- Garis Bold Kanan dan Kiri -->
+            <div class="bold-line"></div>
+            <div class="thin-line"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37951.005624987185!2d103.79554960627704!3d-1.0811159413692168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e260f8c00a79e07%3A0x475e0c5315bf2702!2sKantor%20Desa%20Teluk%20Majelis!5e0!3m2!1sid!2sid!4v1734755633232!5m2!1sid!2sid" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="thin-line"></div>
+    <div class="news-title">
+        Statistik
+        <hr>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+        <!-- Gambar 1 -->
+        <div class="col">
+            <div class="statistic-item text-center">
+                <img src="s1.png" class="rounded-circle mb-3" alt="Statistik 1" style="width: 100px; height: 100px;">
+                <a href="#" class="d-block">DATA WILAYAH</a>
+            </div>
+        </div>
+        <!-- Gambar 2 -->
+        <div class="col">
+            <div class="statistic-item text-center">
+                <img src="s2.png" class="rounded-circle mb-3" alt="Statistik 2" style="width: 100px; height: 100px;">
+                <a href="#" class="d-block">DATA PENDIDIKAN</a>
+            </div>
+        </div>
+        <!-- Gambar 3 -->
+        <div class="col">
+            <div class="statistic-item text-center">
+                <img src="s3.png" class="rounded-circle mb-3" alt="Statistik 3" style="width: 100px; height: 100px;">
+                <a href="#" class="d-block">DATA PEKERJAAN</a>
+            </div>
+        </div>
+        <!-- Gambar 4 -->
+        <div class="col">
+            <div class="statistic-item text-center">
+                <img src="s4.png" class="rounded-circle mb-3" alt="Statistik 4" style="width: 100px; height: 100px;">
+                <a href="#" class="d-block">DATA AGAMA</a>
+            </div>
+        </div>
+        <!-- Gambar 5 -->
+        <div class="col">
+            <div class="statistic-item text-center">
+                <img src="s5.png" class="rounded-circle mb-3" alt="Statistik 4" style="width: 100px; height: 100px;">
+                <a href="#" class="d-block">JENIS KELAMIN</a>
+            </div>
+        </div>
+        <!-- Gambar 6 -->
+        <div class="col">
+            <div class="statistic-item text-center">
+                <img src="s6.png" class="rounded-circle mb-3" alt="Statistik 4" style="width: 100px; height: 100px;">
+                <a href="#" class="d-block">STATISTIK UMUR</a>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #056298; color: white; padding: 20px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Kolom Logo dan Tulisan -->
+                <div class="col-md-3 d-flex align-items-center">
+                    <img src="logo.png" alt="Logo" style="width: 60px; margin-right: 10px;">
+                    <div>
+                        <h4 style="margin: 0;">PEMERINTAH</h4>
+                        <p style="margin: 0;">DESA TELUK MAJELIS</p>
+                    </div>
+                </div>
+
+                <!-- Kolom Profil -->
+                <div class="col-md-3">
+                    <h5>Profil</h5>
+                    <hr style="border: 2px solid yellow; width: 50px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" class="hover-link">Sejarah</a></li>
+                        <li><a href="#" class="hover-link">Visi & Misi</a></li>
+                        <li><a href="#" class="hover-link">Struktur Organisasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom Dokumen -->
+                <div class="col-md-3">
+                    <h5>Dokumen</h5>
+                    <hr style="border: 2px solid yellow; width: 50px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" class="hover-link">Peraturan Desa</a></li>
+                        <li><a href="#" class="hover-link">APBDes</a></li>
+                        <li><a href="#" class="hover-link">Rencana Kerja</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom Kontak -->
+                <div class="col-md-3">
+                    <h5>Kontak</h5>
+                    <hr style="border: 2px solid yellow; width: 50px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" class="hover-link">Email: info@telukmajelis.id</a></li>
+                        <li><a href="#" class="hover-link">Telp: +62 812 3456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.link/33c60i" target="_blank" class="whatsapp-icon">
+        <i class="bi bi-whatsapp"></i> <!-- Using Bootstrap Icons -->
+    </a>
+    <footer style="background-color: #045085; color: white; padding: 20px;">
+        <div class="container">
+            <div class="row text-center text-md-start align-items-center">
+                <!-- Tulisan Footer -->
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p>&copy; 2024 Desa Teluk Majelis. All rights reserved.</p>
+                </div>
+                <!-- Ikon Media Sosial -->
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="social-icon"><i class="bi bi-facebook" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-twitter" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-linkedin" style="color: white; font-size: 20px; margin: 0 10px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        //efek muncul
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsCards = document.querySelectorAll('.news-card');
+            newsCards.forEach(card => {
+                card.classList.add('show');  // Add the 'show' class to trigger the animation
+            });
+        });
+    </script>
+    <script>
+        // Update digital clock every second
+        function updateClock() {
+            const now = new Date();
+            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            const day = days[now.getDay()];
+            const date = now.getDate().toString().padStart(2, '0');
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const year = now.getFullYear();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
+            const formattedDate = `${day}, ${date}-${month}-${year}`;
+
+            document.getElementById('clock').innerHTML = `${formattedDate}<br>${formattedTime}`;
+        }
+
+        setInterval(updateClock, 1000);  // Update every second
+        updateClock();  // Initial call to display time immediately
+    </script>
+    <script type="text/javascript">
+        // JavaScript to toggle the visibility of the Dusun list
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var dusunList = document.getElementById('dusunList');
+            if (dusunList.style.display === 'none' || dusunList.style.display === '') {
+                dusunList.style.display = 'block';
+            } else {
+                dusunList.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
